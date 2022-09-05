@@ -39,14 +39,21 @@ public class LoginFormController {
             txtUserName.selectAll();
             return;
         }
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/medical_clinic", "root", "Rashmi@1997")) {
-            String sql="SELECT role FROM User WHERE username='%s' AND password='%s'";
-            sql=String.format(sql,userName,passwordText);
-            System.out.println(sql);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet=statement.executeQuery(sql);
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/medical_clinic_final", "root", "Rashmi@1997")) {
+//            String sql="SELECT role FROM User WHERE username='%s' AND password='%s'";
+//            sql=String.format(sql,userName,passwordText);
+//            System.out.println(sql);
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet=statement.executeQuery(sql);
+
+
+            String sql="SELECT role FROM User WHERE username=? AND password=?";   // ?1 and ?2 (not starting from zer0)
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);  // by the end of this line it has gone to the dbms and has already compiled
+            preparedStatement.setString(1,userName);
+            preparedStatement.setString(2,passwordText);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()){
                 String role=resultSet.getString("role");
