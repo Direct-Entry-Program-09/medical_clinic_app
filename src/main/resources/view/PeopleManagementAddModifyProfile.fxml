@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep9.clinic.controller.PeopleManagementAddModifyProfileController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="76.0" prefHeight="300.0" prefWidth="200.0" />
+      <Label fx:id="lblProfile" layoutX="26.0" layoutY="29.0" text="ADD PROFILE">
+         <font>
+            <Font name="Cantarell Extra Bold" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="65.0" prefHeight="1.0" prefWidth="417.0" style="-fx-background-color: grey;" />
+      <ImageView fitHeight="78.0" fitWidth="89.0" layoutX="497.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/MediCare.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
