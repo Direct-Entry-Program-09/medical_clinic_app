@@ -31,6 +31,11 @@
                   <Font name="Cantarell Extra Bold" size="16.0" />
                </font>
             </Button>
+            <Button fx:id="btnLogout" defaultButton="true" layoutX="-4.0" layoutY="155.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="31.0" prefWidth="214.0" text="LOG OUT">
+               <font>
+                  <Font name="Cantarell Extra Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="435.0" layoutY="38.0" prefHeight="124.0" prefWidth="141.0">
